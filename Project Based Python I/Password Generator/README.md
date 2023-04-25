@@ -9,14 +9,14 @@ The string module obtains all possible letters, digits, and special characters, 
 
 The code for this project is relatively simple as it uses a loop to continually generate passwords until it contains at least one special character and two digits. You can, of course, modify this to fit your own super-strong password rules!
 
-# TODO
+## TODO
 
 1. Use ascii letters, didits and punctuation for generating password.
 2. Use secret module to generate stong password.
 3. Check if the password is strong.
 4. If the password is not strong enough, create a new password until it meets the necessary rules
 
-# RULES:
+## RULES:
 
 - Your password must contains at least one special character
 - Your password must contains at least two digits.
