@@ -1,7 +1,3 @@
-'''
-Dice Roll Generator
--------------------------------------------------------------
-'''
 import random
 import os
 

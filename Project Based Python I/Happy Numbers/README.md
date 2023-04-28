@@ -1,4 +1,4 @@
-<img src="./images/happy-numbers.png" width="600"/>
+<img src="./images/happy-numbers.png" width="700"/>
 
 # Happy Numbers
 > DIFFICULTY: **EASY**

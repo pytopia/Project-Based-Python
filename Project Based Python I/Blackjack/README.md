@@ -1,4 +1,4 @@
-<img src="./images/blackjack.jpg" width="700"/>
+<img src="./images/blackjack.png" width="700"/>
 
 # Blackjack
 > DIFFICULTY: **INTERMEDIATE**

@@ -9,7 +9,7 @@ A site connectivity checker is an application that helps us to monitor whether a
 
 1. Create a GUI based project which will have an input field where user enter the url.
 2. Your GUI needs a button for check
-3. Get url from user
+3. Get url from the user
 4. Send an http request to the entered url and get its status code. If the code is 200, it means the site is available.
 5. If the url is available “Available” will be displayed else “Not Available” will be displayed. 
 

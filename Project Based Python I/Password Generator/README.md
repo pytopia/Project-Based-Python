@@ -1,4 +1,4 @@
-<img src="./images/password-generator.png" width="500"/>
+<img src="./images/password-generator.png" width="700"/>
 
 # Password Generator
 > DIFFICULTY: **EASY**

@@ -1,4 +1,4 @@
-<img src="./images/strength-password.png" width="500"/>
+<img src="./images/strength-password.png" width="700"/>
 
 # Check Password Strength
 > DIFFICULTY: **EASY**
