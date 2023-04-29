@@ -1,7 +1,6 @@
-'''
-Number Guessing Game
--------------------------------------------------------------
-'''
+# Source Code Link:
+# https://hackr.io/blog/python-projects
+
 import random
 
 attempts_list = []

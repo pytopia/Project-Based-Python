@@ -1,3 +1,6 @@
+# Source Code Link:
+# https://hackr.io/blog/python-projects
+
 ones = (
    'Zero', 'One', 'Two', 'Three', 'Four',
    'Five', 'Six', 'Seven', 'Eight', 'Nine'

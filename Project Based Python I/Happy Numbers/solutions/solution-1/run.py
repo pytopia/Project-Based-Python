@@ -1,3 +1,6 @@
+# Source Code Link:
+# https://hackr.io/blog/python-projects
+
 def get_digits(number):
     digits = []
     while number:
