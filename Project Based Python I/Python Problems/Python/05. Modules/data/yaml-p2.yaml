@@ -1,0 +1,19 @@
+weekday:
+
+  - monday
+  - tuesday
+  - wednesday
+  - thursday
+  - friday
+  - saturday
+  - sunday
+  
+months:
+
+  - jan
+  - feb
+  - mar
+  - apr
+  - may
+  - june
+  - july
