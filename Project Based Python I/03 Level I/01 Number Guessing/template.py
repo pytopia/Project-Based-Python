@@ -4,7 +4,6 @@ def show_score():
     # Print min of attempts
 
 def start_game():
-    
     # Check if the user wants to continue. If the answer is no, show the score.
     while:
         # Continue until the user wants...
