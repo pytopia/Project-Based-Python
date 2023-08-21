@@ -44,7 +44,7 @@ def start_game():
                 print(f'It took you {attempts} attempts')
                 wanna_play = input(
                     'Would you like to play again? (Enter Yes/No): ')
-                
+
                 if wanna_play.lower()[0] != 'y':
                     print('That\'s cool! ')
                     break
