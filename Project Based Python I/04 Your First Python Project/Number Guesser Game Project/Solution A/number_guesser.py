@@ -1,67 +1,52 @@
-# Source Code Link:
-# https://hackr.io/blog/python-projects
-
 import random
 
-attempts_list = []
 
+def validate_input(input_num):
+    if not input_num.isdigit():
+        print('Invalid input. Please enter a number.')
+        return False
 
-def show_score():
-    if not attempts_list:
-        print('There is currently no high score, it\'s yours for the taking!')
+    input_num = int(input_num)
+    if input_num < 1 or input_num > 100:
+        print('Invalid input. Please enter a number between 1 and 100.')
+        return False
 
-    else:
-        print(f'The current high score is {min(attempts_list)} attempts')
+    return True
 
 
 def start_game():
-    attempts = 0
-    rand_num = random.randint(1, 10)
-    print('Hello traveler! Welcome to the game of guesses!')
-    player_name = input('What is your name? ')
-    wanna_play = input(
-        f'Hi, {player_name}, would you like to play the guessing game?'
-        '(Enter Yes/No): ')
+    rand_num = random.randint(1, 100)
+    score = 100
 
-    if wanna_play.lower()[0] != 'y':
-        print('That\'s cool, Thanks!')
-        exit()
-    else:
-        show_score()
+    while True:
+        input_num = input("Enter your guess between 1 and 100:")
 
-    while wanna_play.lower()[0] == 'y':
-        try:
-            guess = int(input('Pick a number between 1 and 10: '))
-            if guess < 1 or guess > 10:
-                raise ValueError(
-                    'Please guess a number within the given range')
+        if input_num == 'q':
+            print('Goodbye!')
+            break
 
-            attempts += 1
-            attempts_list.append(attempts)
+        if not validate_input(input_num):
+            continue
 
-            if guess == rand_num:
-                print('Nice! You got it!')
-                print(f'It took you {attempts} attempts')
-                wanna_play = input(
-                    'Would you like to play again? (Enter Yes/No): ')
-
-                if wanna_play.lower()[0] != 'y':
-                    print('That\'s cool! ')
-                    break
-                else:
-                    attempts = 0
-                    rand_num = random.randint(1, 10)
-                    show_score()
-                    continue
+        input_num = int(input_num)
+        if input_num == rand_num:
+            print(f'You guessed correctly! Your score is: {score}')
+            wanna_play = input('Do you want to play again? (y/n)')
+            if wanna_play == 'y':
+                rand_num = random.randint(1, 100)
+                score = 100
+                continue
             else:
-                if guess > rand_num:
-                    print('It\'s lower')
-                elif guess < rand_num:
-                    print('It\'s higher')
+                print('Goodbye!')
+                break
 
-        except ValueError as err:
-            print('Oh no!, that is not a valid value. Try again...')
-            print(err)
+        elif input_num > rand_num:
+            print('You guessed too high!')
+        else:
+            print('You guessed too low!')
+
+        score -= 10
+        score = max(score, 0)
 
 
 if __name__ == '__main__':
