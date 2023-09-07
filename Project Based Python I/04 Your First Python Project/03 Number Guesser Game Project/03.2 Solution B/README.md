@@ -27,7 +27,7 @@ number_guesser/
 1. Navigate to the main project directory (`number_guesser`).
 2. Add the current directory to the `PYTHONPATH` and run the `main.py` script:
 ```bash
-export PYTHONPATH=$PYTHONPATH:.
+export PYTHONPATH=$PYTHONPATH:$(pwd)
 python src/main.py
 ```
 
