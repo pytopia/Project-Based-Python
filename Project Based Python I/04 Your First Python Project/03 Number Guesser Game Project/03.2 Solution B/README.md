@@ -1,4 +1,4 @@
-# Number Guesser Game - Solution
+# Number Guesser Game - Solution B
 
 ## Overview
 
