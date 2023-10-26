@@ -3,8 +3,8 @@ import time
 
 from monty_hall import simulate_games
 
-
-st.title("Monty Hall Simulation")
+# Title of the application
+st.image('src/images/banner.png')
 
 num_games = st.number_input("Enter number of games to simulate", min_value=1, value=100)
 
@@ -13,7 +13,9 @@ wins_no_switch = 0
 wins_switch = 0
 
 col1, col2 = st.columns(2)
+col1.subheader("Win Percentage Without Switching")
 chart1 = col1.line_chart(x=None, y=None, width=0, height=400)
+col2.subheader("Win Percentage With Switching")
 chart2 = col2.line_chart(x=None, y=None, width=0, height=400)
 
 for i in range(num_games):
