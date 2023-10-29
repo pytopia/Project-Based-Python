@@ -1,6 +1,4 @@
-# README.md
-
-## Project Name: Python Number to Words Converter
+# Number to Words Converter
 
 ## Description:
 
@@ -21,7 +19,7 @@ Other required modules and necessary constants are in a separate Python file:
 To run the program, follow these steps:
 
 1. Navigate to the project folder in your terminal.
-2. Run the main.py script using the command `python main.py`.
+2. Run the `main.py` script using the command `python main.py`.
 3. When requested, enter a number to be converted into words.
 
 ## Functions and Definitions:

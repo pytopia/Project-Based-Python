@@ -18,7 +18,7 @@ The password generator uses Python's `random` and `string` modules to generate p
 
 ## Requirements
 
-- Python 3.6 or later
+- Python 3.7+
 - NLTK (Natural Language Toolkit)
 
 To install NLTK, use pip:

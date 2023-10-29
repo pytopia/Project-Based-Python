@@ -1,6 +1,4 @@
-Sure, here's a simple `README.md` file for your project:
-
-# Python Password Generator
+# Password Generator - OOP Approach
 
 This project contains a password generator application written in Python. The generator can create three types of passwords:
 
@@ -20,7 +18,7 @@ Each generator class inherits from a base `PasswordGenerator` class. They each o
 
 ## Requirements
 
-- Python 3.6 or later
+- Python 3.7+
 - NLTK (Natural Language Toolkit)
 
 To install NLTK, use pip:

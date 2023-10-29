@@ -18,7 +18,7 @@ The project has the following structure:
 
 ## Requirements
 
-- Python 3.6 or later
+- Python 3.7+
 - Streamlit
 - NLTK (Natural Language Toolkit)
 
