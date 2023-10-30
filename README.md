@@ -1,4 +1,4 @@
-<img src="./images/bannerr.png" width="800">
+<img src="./images/banner.png" width="800">
 
 This is a collection of diverse Python projects, each with a project description, template code, difficulty level, and suggested Python packages for implementation. The goal of this repository is to provide inspiration, guidance, and support for Python learners and enthusiasts of varying skill levels. Whether you're a beginner or an experienced developer, there's something here for you!
 
