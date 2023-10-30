@@ -2,14 +2,17 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/pytopia/project-based-python)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pytopia/project-based-python)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pytopia/project-based-python)
 ![GitHub Repo stars](https://img.shields.io/github/stars/pytopia/project-based-python)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ID)](https://www.codacy.com/gh/pytopia/project-based-python/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pytopia/project-based-python&amp;utm_campaign=Badge_Grade)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=pytopia.project-based-python)
+![GitHub top language](https://img.shields.io/github/languages/top/pytopia/project-based-python)
+[![Website](https://img.shields.io/badge/Visit-Website-blue)](https://www.pytopia.ai)
+[![Telegram](https://img.shields.io/badge/Join-Telegram-blue)](https://t.me/pytopia_ai)
 [![Instagram](https://img.shields.io/badge/Follow-Instagram-red)](https://instagram.com/pytopia.ai)
 [![YouTube](https://img.shields.io/badge/Subscribe-YouTube-red)](https://www.youtube.com/c/pytopia)
 [![LinkedIn](https://img.shields.io/badge/Follow-LinkedIn-blue)](https://linkedin.com/company/pytopia)
 [![Twitter](https://img.shields.io/badge/Follow-Twitter-blue)](https://twitter.com/pytopia_ai)
-[![Telegram](https://img.shields.io/badge/Join-Telegram-blue)](https://t.me/pytopia_ai)
-[![Website](https://img.shields.io/badge/Visit-Website-blue)](https://www.pytopia.ai)
-
 
 
 Project Based Python is a collection of Python projects for beginners and intermediate learners, each with a project description, template code, difficulty level, and solutions. Whether you're a beginner or an experienced developer, there's something here for you!
