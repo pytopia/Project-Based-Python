@@ -1,5 +1,5 @@
-# Importing required constants
 from constants import UNDER_20, ABOVE_100, TENS
+
 
 def num_to_word(num: int) -> str:
     """
@@ -21,12 +21,11 @@ def num_to_word(num: int) -> str:
     # For numbers 100 and above, calculate words recursively.
     pivot = max([key for key in ABOVE_100.keys() if key <= num])
 
-    return (
-        num_to_word(num // pivot)
-        + " "
-        + ABOVE_100[pivot]
-        + ("" if num % pivot == 0 else " " + num_to_word(num % pivot))
-    )
+    p1 = num_to_word(num // pivot)
+    p2 = ABOVE_100[pivot]
+    p3 = "" if num % pivot == 0 else " " + num_to_word(num % pivot)
+    return p1 + " " + p2 + p3
+
 
 def main() -> None:
     """
@@ -46,4 +45,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
