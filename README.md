@@ -53,13 +53,13 @@ To start using the projects in this repository:
 # Project Structure
 Each project in this repository is structured as follows:
 ```
-  - project-name/
-    - README.md
-    - solutions/
-      - solution-1/
-      - solution-2/
-      - solution-3/
-    - additional-files (if any)
+- project-name/
+  - README.md
+  - solutions/
+    - solution-1/
+    - solution-2/
+    - solution-3/
+  - additional-files (if any)
 ```
 - `README.md`
 Contains the project description, difficulty level, objectives, and any additional information needed to understand and complete the project.
