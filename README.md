@@ -5,7 +5,7 @@ This is a collection of diverse Python projects, each with a project description
 # Learn with Us!
 We offer a [course on these projects](https://www.pytopia.ai/courses/project-based-python) where learners can interact with peers and instructors, ask questions, and participate in online coding sessions. By registering for the course, you also gain access to our dedicated Telegram group. Enroll now and start learning!
 
-<img src="./images/course.png" width="800">
+<img src="./images/pytopia-course.png" width="800">
 
 # Project Levels & List
 The projects are designed in three levels.
