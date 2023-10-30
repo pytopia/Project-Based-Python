@@ -1,6 +1,5 @@
 <img src="./images/banner.png" width="800">
 
-# Project Based Python
 This is a collection of diverse Python projects, each with a project description, template code, difficulty level, and suggested Python packages for implementation. The goal of this repository is to provide inspiration, guidance, and support for Python learners and enthusiasts of varying skill levels. Whether you're a beginner or an experienced developer, there's something here for you!
 
 # Learn with Us!
@@ -10,6 +9,8 @@ We offer a [course on these projects](https://www.pytopia.ai/courses/project-bas
 
 # Project Levels & List
 The projects are designed in three levels.
+
+<img src="./images/python-projects.png" width="800">
 
 ## Level I
   - Rock Paper Scissors
