@@ -1,21 +1,46 @@
 import random
+from typing import List
+
 
 class RockPaperScissors:
+    """
+    Main class for the game Rock, Paper, Scissors
+    """
     def __init__(self):
-        self.choices = ['rock', 'paper', 'scissors']
+        """Constructor method"""
+        self.choices: List[str] = ['rock', 'paper', 'scissors']
 
-    def get_user_choice(self):
+    def get_user_choice(self) -> str:
+        """Method to get the user's choice.
+
+        :return: User's choice as a string
+        :rtype: str
+        """
         user_choice = input("Enter your choice (rock/paper/scissors): ")
-        if user_choice.lower() in self.choices:
+        if user_choice in self.choices:
             return user_choice
         else:
             print("Invalid choice. Please make sure your choice is in 'rock', 'paper' or 'scissors'.")
             return self.get_user_choice()
 
-    def get_computer_choice(self):
+    def get_computer_choice(self) -> str:
+        """Method to select the computer's choice.
+
+        :return: Computer's choice as a string
+        :rtype: str
+        """
         return random.choice(self.choices)
 
-    def decide_winner(self, user_choice, computer_choice):
+    def decide_winner(self, user_choice: str, computer_choice: str) -> str:
+        """Method to decide game winner based on the rules.
+
+        :param user_choice: The user's choice
+        :type user_choice: str
+        :param computer_choice: The computer's choice
+        :type computer_choice: str
+        :return: Game outcome as a string
+        :rtype: str
+        """
         if user_choice == computer_choice:
             return "It's a tie!"
         elif (user_choice == 'rock' and computer_choice == 'scissors') or \
@@ -26,8 +51,9 @@ class RockPaperScissors:
             return "Oh no, the computer won!"
 
     def play(self):
-        user_choice = self.get_user_choice()
-        computer_choice = self.get_computer_choice()
+        """Main method to play Rock, Paper, Scissors"""
+        user_choice: str = self.get_user_choice()
+        computer_choice: str = self.get_computer_choice()
         print('Computer chose: ', computer_choice)
         print(self.decide_winner(user_choice, computer_choice))
 

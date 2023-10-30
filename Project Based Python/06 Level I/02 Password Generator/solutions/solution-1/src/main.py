@@ -1,11 +1,9 @@
-from abc import ABC, abstractmethod
 import random
 import string
+from abc import ABC, abstractmethod
 from typing import List, Optional
 
 import nltk
-from nltk.corpus import words
-
 
 nltk.download('words')
 
