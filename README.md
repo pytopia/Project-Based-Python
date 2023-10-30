@@ -2,6 +2,14 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/pytopia/project-based-python)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pytopia/project-based-python)
+![GitHub Repo stars](https://img.shields.io/github/stars/pytopia/project-based-python)
+[![Instagram](https://img.shields.io/badge/Follow-Instagram-red)](https://instagram.com/pytopia.ai)
+[![YouTube](https://img.shields.io/badge/Subscribe-YouTube-red)](https://www.youtube.com/c/pytopia)
+[![LinkedIn](https://img.shields.io/badge/Follow-LinkedIn-blue)](https://linkedin.com/company/pytopia)
+[![Twitter](https://img.shields.io/badge/Follow-Twitter-blue)](https://twitter.com/pytopia_ai)
+[![Telegram](https://img.shields.io/badge/Join-Telegram-blue)](https://t.me/pytopia_ai)
+[![Website](https://img.shields.io/badge/Visit-Website-blue)](https://www.pytopia.ai)
+
 
 
 Project Based Python is a collection of Python projects for beginners and intermediate learners, each with a project description, template code, difficulty level, and solutions. Whether you're a beginner or an experienced developer, there's something here for you!
