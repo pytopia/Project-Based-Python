@@ -10,7 +10,7 @@ We offer a [course on these projects](https://www.pytopia.ai/courses/project-bas
 # Project Levels & List
 The projects are designed in three levels.
 
-<img src="./images/python-projects.png" width="800">
+<img src="./images/python-projects.png" width="400">
 
 ## Level I
   - Rock Paper Scissors
