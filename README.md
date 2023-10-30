@@ -41,8 +41,8 @@ The projects are designed in three levels.
   - Chatbot
   - Face Detection
 
-Lastly, the grand capstone project: 
-  - ChatGPT Customer Service.
+Lastly, the grand capstone project:
+  - AI Powered Customer Service.
 
 # Getting Started
 To start using the projects in this repository:
