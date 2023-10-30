@@ -11,11 +11,11 @@ rock-paper-scissors/
 ├── src/
 │   ├── game.py - the main game class
 │
-└── README.md - this file
+└── README.md
 ```
 
 ## Requirements
-1. Python 3.6+ : This project uses several Python 3.6+ features like fstrings.
+1. Python 3.7+
 
 ## Running the Project
 To run the project:
