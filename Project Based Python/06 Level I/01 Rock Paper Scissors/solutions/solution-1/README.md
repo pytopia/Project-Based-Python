@@ -8,7 +8,7 @@ rock-paper-scissors/
 │
 ├── src/
 │   ├── game.py - The main game class
-
+│
 ├── README.md - This file
 ```
 
