@@ -14,7 +14,7 @@ class RockPaperScissors:
 
         :return: User's choice as a string
         """
-        user_choice = input("Enter your choice (rock/paper/scissors): ")
+        user_choice: str = input("Enter your choice (rock/paper/scissors): ")
         if user_choice in self.choices:
             return user_choice
         else:
