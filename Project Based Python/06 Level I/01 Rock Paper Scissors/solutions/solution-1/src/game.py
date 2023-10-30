@@ -7,14 +7,12 @@ class RockPaperScissors:
     Main class for the game Rock, Paper, Scissors
     """
     def __init__(self):
-        """Constructor method"""
         self.choices: List[str] = ['rock', 'paper', 'scissors']
 
     def get_user_choice(self) -> str:
         """Method to get the user's choice.
 
         :return: User's choice as a string
-        :rtype: str
         """
         user_choice = input("Enter your choice (rock/paper/scissors): ")
         if user_choice in self.choices:
@@ -27,7 +25,6 @@ class RockPaperScissors:
         """Method to select the computer's choice.
 
         :return: Computer's choice as a string
-        :rtype: str
         """
         return random.choice(self.choices)
 
@@ -35,11 +32,8 @@ class RockPaperScissors:
         """Method to decide game winner based on the rules.
 
         :param user_choice: The user's choice
-        :type user_choice: str
         :param computer_choice: The computer's choice
-        :type computer_choice: str
         :return: Game outcome as a string
-        :rtype: str
         """
         if user_choice == computer_choice:
             return "It's a tie!"
