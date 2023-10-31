@@ -24,7 +24,7 @@ class RandomPasswordGenerator(PasswordGenerator):
     """
     Class to generate a random password.
     """
-    def __init__(self, length: int = 8, include_numbers: bool = False, include_symbols: bool =False):
+    def __init__(self, length: int = 8, include_numbers: bool = False, include_symbols: bool = False):
         self.length = length
         if include_numbers:
             self.characters: str = string.ascii_letters + string.digits
@@ -44,7 +44,13 @@ class MemorablePasswordGenerator(PasswordGenerator):
     """
     Class to generate a memorable password.
     """
-    def __init__(self, no_of_words: int = 5, separator: str = "-", capitalization: bool = False, vocabulary: Optional[List[str]] = None):
+    def __init__(
+        self,
+        no_of_words: int = 5,
+        separator: str = "-",
+        capitalization: bool = False,
+        vocabulary: Optional[List[str]] = None
+    ):
         if vocabulary is None:
             vocabulary = ['apple', 'banana', 'cherry', 'dates']  # edit this to any vocabulary list you want
         self.no_of_words: int = no_of_words
