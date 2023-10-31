@@ -18,7 +18,7 @@ def get_computer_choice():
     return items[computer_choice]
 
 
-def determine_winner(user_choice, computer_choice):
+def determine_winner(user_choice: str, computer_choice: str):
     """Determines the winner."""
     winners = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
     if user_choice == computer_choice:
