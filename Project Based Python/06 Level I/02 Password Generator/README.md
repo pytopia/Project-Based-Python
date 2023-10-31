@@ -12,6 +12,8 @@ Create a Python application that generates three types of passwords:
 2. Memorable Passwords
 3. Pin Codes
 
+<img src="./images/password-types.png" width="800">
+
 ## Requirements
 
 Your application should have the following features:
