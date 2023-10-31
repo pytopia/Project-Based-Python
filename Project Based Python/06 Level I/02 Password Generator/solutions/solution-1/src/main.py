@@ -92,7 +92,12 @@ def test_random_password_generator():
 
 
 def test_memorable_password_generator():
-    memorable_gen = MemorablePasswordGenerator(no_of_words=4, separator="-", capitalization=True)
+    memorable_gen = MemorablePasswordGenerator(
+        no_of_words=4,
+        separator="-",
+        capitalization=True,
+        vocabulary=nltk.corpus.words.words(),
+    )
     password = memorable_gen.generate()
     print(password)
     assert len(password.split('-')) == 4
