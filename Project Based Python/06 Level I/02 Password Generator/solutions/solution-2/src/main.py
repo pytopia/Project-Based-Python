@@ -17,7 +17,12 @@ def generate_random_password(length: int = 8, include_numbers: bool = False, inc
     return ''.join(random.choice(characters) for _ in range(length))
 
 
-def generate_memorable_password(no_of_words: int = 5, separator: str = "-", capitalization: bool = False, vocabulary: Optional[List[str]] = None) -> str:
+def generate_memorable_password(
+    no_of_words: int = 5,
+    separator: str = "-",
+    capitalization: bool = False,
+    vocabulary: Optional[List[str]] = None
+) -> str:
     """
     Generate a memorable password from a list of vocabulary words.
     """
