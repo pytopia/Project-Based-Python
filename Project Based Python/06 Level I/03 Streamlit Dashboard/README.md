@@ -2,7 +2,6 @@
 
 # Password Generator Dashboard
 
-## Project Overview
 Welcome to the 'Password Generator Dashboard' project with Streamlit! This interactive web application provides users with the ability to generate different types of passwords based on their preferences. It incorporates three classes for password generation including `RandomPasswordGenerator`, `MemorablePasswordGenerator`, and `PinCodeGenerator`. You can find these classes in the `password_generator.py` module.
 
 In this project, you will be expected to apply your knowledge of Streamlit to create a user-friendly dashboard interface for these password generators.
