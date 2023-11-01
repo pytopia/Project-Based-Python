@@ -13,12 +13,12 @@ class Scraper:
         response = urllib.request.urlopen(self.site)
         html = response.read()
         parser = "html.parser"
-        sp = BeautifulSoup(html,parser, from_encoding='UTF-8')
+        sp = BeautifulSoup(html, parser, from_encoding='UTF-8')
         html = sp.select('.league-standing')[0]
-        
+
         with open('output/page.html', 'w') as f:
             f.write(str(html))
-        
+
         print('html file is ready!')
 
 if __name__ == '__main__':
