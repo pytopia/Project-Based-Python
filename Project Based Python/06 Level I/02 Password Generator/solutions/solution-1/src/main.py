@@ -52,7 +52,8 @@ class MemorablePasswordGenerator(PasswordGenerator):
         vocabulary: Optional[List[str]] = None
     ):
         if vocabulary is None:
-            vocabulary = ['apple', 'banana', 'cherry', 'dates']  # edit this to any vocabulary list you want
+            vocabulary = nltk.corpus.words.words()  # edit this to any vocabulary list you want
+
         self.no_of_words: int = no_of_words
         self.separator: str = separator
         self.capitalization: bool = capitalization
@@ -62,9 +63,9 @@ class MemorablePasswordGenerator(PasswordGenerator):
         """
         Generate a password from a list of vocabulary words.
         """
-        password_words = random.sample(self.vocabulary, self.no_of_words)
+        password_words = [random.choice(self.vocabulary) for _ in range(self.no_of_words)]
         if self.capitalization:
-            password_words = [word.capitalize() for word in password_words]
+            password_words = [word.upper() for word in password_words]
         return self.separator.join(password_words)
 
 

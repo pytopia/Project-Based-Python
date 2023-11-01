@@ -1,11 +1,9 @@
-from abc import ABC, abstractmethod
 import random
 import string
+from abc import ABC, abstractmethod
 from typing import List, Optional
 
 import nltk
-from nltk.corpus import words
-
 
 nltk.download('words')
 
@@ -26,13 +24,14 @@ class RandomPasswordGenerator(PasswordGenerator):
     """
     Class to generate a random password.
     """
-    def __init__(self, length: int = 8, include_numbers: bool = False, include_symbols: bool =False):
+    def __init__(self, length: int = 8, include_numbers: bool = False, include_symbols: bool = False):
         self.length = length
-        self.characters: str = string.ascii_letters
         if include_numbers:
-            self.characters += string.digits
-        if include_symbols:
-            self.characters += string.punctuation
+            self.characters: str = string.ascii_letters + string.digits
+        elif include_symbols:
+            self.characters: str = string.ascii_letters + string.punctuation
+        else:
+            self.characters: str = string.ascii_letters
 
     def generate(self) -> str:
         """
@@ -45,9 +44,16 @@ class MemorablePasswordGenerator(PasswordGenerator):
     """
     Class to generate a memorable password.
     """
-    def __init__(self, no_of_words: int = 5, separator: str = "-", capitalization: bool = False, vocabulary: Optional[List[str]] = None):
+    def __init__(
+        self,
+        no_of_words: int = 5,
+        separator: str = "-",
+        capitalization: bool = False,
+        vocabulary: Optional[List[str]] = None
+    ):
         if vocabulary is None:
-            vocabulary = ['apple', 'banana', 'cherry', 'dates']  # edit this to any vocabulary list you want
+            vocabulary = nltk.corpus.words.words()  # edit this to any vocabulary list you want
+
         self.no_of_words: int = no_of_words
         self.separator: str = separator
         self.capitalization: bool = capitalization
@@ -57,9 +63,9 @@ class MemorablePasswordGenerator(PasswordGenerator):
         """
         Generate a password from a list of vocabulary words.
         """
-        password_words = random.sample(self.vocabulary, self.no_of_words)
+        password_words = [random.choice(self.vocabulary) for _ in range(self.no_of_words)]
         if self.capitalization:
-            password_words = [word.upper() if random.choice([True, False]) else word.lower() for word in password_words]
+            password_words = [word.upper() for word in password_words]
         return self.separator.join(password_words)
 
 
