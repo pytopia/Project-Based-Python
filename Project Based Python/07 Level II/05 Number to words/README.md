@@ -6,6 +6,20 @@
 
 This project presents a Python script that converts a positive integer input from a user into its equivalent words. In other words, it translates numeric form into verbal form. For instance, if a user inputs "12345", the program will output "Twelve thousand three hundred forty five". Keep in mind that this program is designed to handle numbers with a maximum of 12 digits.
 
+```
+Input: 257
+Output: Two Hundred Fifty Seven
+
+Input: 600000
+Output: Six Hundred Thousand
+
+Input: 3890
+Output: Three Thousand Eight Hundred Ninety
+
+Input: 1000000
+Output: One Million
+```
+
 ## Project Structure
 
 The project comprises two main components:

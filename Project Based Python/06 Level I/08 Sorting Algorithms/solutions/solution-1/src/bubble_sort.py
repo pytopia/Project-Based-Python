@@ -1,5 +1,6 @@
 from typing import List
 
+
 def bubble_sort(list: List[int]) -> List[int]:
     """
     Sorts a list using Bubble Sort algorithm
@@ -18,4 +19,3 @@ def bubble_sort(list: List[int]) -> List[int]:
 
 if __name__ == "__main__":
     assert bubble_sort([3, 1, 2]) == [1, 2, 3]
-

@@ -1,5 +1,6 @@
 from typing import List
 
+
 def insertion_sort(list: List[int]) -> List[int]:
     """
     Sorts a list using Insertion Sort algorithm
@@ -12,10 +13,10 @@ def insertion_sort(list: List[int]) -> List[int]:
     for i in range(1, len(list)):
         key = list[i]
         j = i - 1
-        while j >= 0 and key < list[j] :
-                list[j + 1] = list[j]
-                j -= 1
-        list[j + 1] = key 
+        while j >= 0 and key < list[j]:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = key
     return list
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from typing import List
 
+
 def selection_sort(list: List[int]) -> List[int]:
     """
     Sorts a list using Selection Sort algorithm
@@ -11,7 +12,7 @@ def selection_sort(list: List[int]) -> List[int]:
     """
     for i in range(len(list)):
         min_idx = i
-        for j in range(i+1, len(list)):
+        for j in range(i + 1, len(list)):
             if list[min_idx] > list[j]:
                 min_idx = j
         list[i], list[min_idx] = list[min_idx], list[i]

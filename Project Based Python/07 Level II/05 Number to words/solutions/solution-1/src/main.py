@@ -27,21 +27,12 @@ def num_to_word(num: int) -> str:
     return p1 + " " + p2 + p3
 
 
-def main() -> None:
-    """
-    Function accepts a number from the user and prints its word representation.
-
-    :return: None
-    """
-
+if __name__ == "__main__":
     # Get number from user.
     num = int(input("Enter a Number: "))
     # Check if number is in acceptable range.
-    if num >= 0 and num <= 999999999999:
+    if num >= 0 and num <= 999_999_999_999:
         # Print number in words.
         print(num_to_word(num))
     else:
         print("Number out of range")
-
-if __name__ == "__main__":
-    main()
