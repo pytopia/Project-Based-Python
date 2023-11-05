@@ -39,9 +39,3 @@ To start the Streamlit dashboard, run:
 ## Results
 
 On running the Streamlit application, you will see an input field where you can specify the number of games to simulate. The app will then perform a simulation for each game, both where the contestant switches doors and where they don't. Lastly, the dashboard will display the win percentages dynamically as two separate line charts - showing how the likelihood of winning changes based on your decision to switch or not to switch doors.
-
-## Future Work
-
-This is a base repository for the Monty Hall problem. Future improvements can include adding additional statistics, implementing variations of the problem, or using advanced visualizations.
-
-Enjoy the fun of problem-solving and statistics with this interactive simulation!

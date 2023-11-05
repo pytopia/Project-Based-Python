@@ -2,7 +2,6 @@
 
 # Monty Hall Simulation
 
-## Description
 This project is designed for students who already have a firm grasp of Python programming. We will implement the Monty Hall Simulation Problem, allowing users to play the game through a terminal. Additionally, for those who are interested, an optional challenge is provided to generate a Streamlit dashboard for the game.
 
 ## The Monty Hall Problem
