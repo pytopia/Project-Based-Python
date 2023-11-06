@@ -21,6 +21,7 @@ class Scraper:
 
         print('html file is ready!')
 
+
 if __name__ == '__main__':
     url = "https://www.varzesh3.com/"
     Scraper(url).scrape()
