@@ -1,4 +1,4 @@
-<img src="./images/main-banner.png" width="800">
+<img src="./images/banner.png" width="800">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/pytopia/project-based-python)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pytopia/project-based-python)
@@ -21,7 +21,7 @@ We also offer a [course on these projects](https://www.pytopia.ai/courses/projec
 - [Pytopia Public Telegram Group](https://t.me/pytopia_ai)
 - [Pytopia Website](https://www.pytopia.ai/)
 
-<img src="./images/pytopia-course.png" width="800">
+[<img src="./images/pytopia-course.png" width="800">](https://www.pytopia.ai/courses/project-based-python)
 
 # 🚀 Project Levels & List
 The projects are designed in three levels. Each level contains 5-10 projects, and each project is designed to be more challenging than the previous one. The projects are designed to be completed in order, but you can also jump around and complete them in any order you like. Here's a list of the projects in each level:
