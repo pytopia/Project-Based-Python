@@ -1,6 +1,5 @@
 # Tic-Tac-Toe
 
-## Description
 This project implements the classic two-player game Tic-Tac-Toe using Python. The game board is made of nine cells numbered from 1 to 9, which players mark alternately with an 'O' or an 'X'. The goal is to be the first to mark three 'O's or 'X's diagonally, horizontally, or vertically. The code base utilizes Python's object-oriented programming, defining a TicTacToe class with attributes and methods to represent the game's features. The Python random module is employed to randomly select the first player.
 
 ## Project Structure

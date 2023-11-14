@@ -38,6 +38,7 @@ class RandomPasswordGenerator(PasswordGenerator):
         """
         return ''.join(random.choice(self.characters) for _ in range(self.length))
 
+
 class MemorablePasswordGenerator(PasswordGenerator):
     """
     Class to generate a memorable password.
