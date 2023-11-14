@@ -1,5 +1,6 @@
 import random
 
+
 class TicTacToe:
     def __init__(self):
         self.board = [' '] * 10  # We use 1-9 for convenience, 0 is ignored
