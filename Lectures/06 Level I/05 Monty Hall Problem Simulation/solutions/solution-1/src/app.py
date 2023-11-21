@@ -27,8 +27,8 @@ for i in range(num_games):
     wins_switch += num_wins_with_switching
 
     # # Display the current percentages after each game
-    chart1.add_rows([wins_no_switch / (i + 1)])
-    chart2.add_rows([wins_switch / (i + 1)])
+    chart1.add_rows([wins_switch / (i + 1)])
+    chart2.add_rows([wins_no_switch / (i + 1)])
 
     # Add a delay to create a slow loop effect
     time.sleep(0.01)
