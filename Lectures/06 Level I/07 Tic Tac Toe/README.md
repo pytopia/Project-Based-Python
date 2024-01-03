@@ -1,3 +1,5 @@
+<img src="./images/banner.png" width="800">
+
 # Tic-Tac-Toe Python Project
 
 ## Description

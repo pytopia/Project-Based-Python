@@ -2,8 +2,6 @@
 
 # Number to Words Converter
 
-## Description
-
 This project presents a Python script that converts a positive integer input from a user into its equivalent words. In other words, it translates numeric form into verbal form. For instance, if a user inputs "12345", the program will output "Twelve thousand three hundred forty five". Keep in mind that this program is designed to handle numbers with a maximum of 12 digits.
 
 ```
