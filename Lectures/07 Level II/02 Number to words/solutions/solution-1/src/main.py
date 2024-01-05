@@ -19,12 +19,15 @@ def num_to_word(num: int) -> str:
         return TENS[num // 10 - 2] + ("" if num % 10 == 0 else " " + UNDER_20[num % 10])
 
     # For numbers 100 and above, calculate words recursively.
-    pivot = max([key for key in ABOVE_100.keys() if key <= num])
+    pivot = max([key for key in ABOVE_100 if key <= num])
 
     p1 = num_to_word(num // pivot)
     p2 = ABOVE_100[pivot]
-    p3 = "" if num % pivot == 0 else " " + num_to_word(num % pivot)
-    return p1 + " " + p2 + p3
+    if num % pivot == 0:
+        return f'{p1} {p2}'
+
+    p3 = num_to_word(num % pivot)
+    return f'{p1} {p2} {p3}'
 
 
 if __name__ == "__main__":
