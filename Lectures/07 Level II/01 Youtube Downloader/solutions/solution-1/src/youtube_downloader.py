@@ -58,7 +58,12 @@ def main():
     parser = argparse.ArgumentParser(description='Download a YouTube video at a specified quality and output path.')
 
     parser.add_argument('url', help='The YouTube URL to download')
-    parser.add_argument('-q', '--quality', help='The desired video quality (e.g., 720p, 1080p, highest)', default='highest', type=str)
+    parser.add_argument(
+        '-q', '--quality',
+        help='The desired video quality (e.g., 720p, 1080p, highest)',
+        default='highest',
+        type=str
+    )
     parser.add_argument('-o', '--output_path', help='The output directory to save the video', default='.', type=str)
 
     args = parser.parse_args()
