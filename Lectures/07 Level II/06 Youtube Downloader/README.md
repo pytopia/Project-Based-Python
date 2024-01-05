@@ -4,10 +4,15 @@
 
 Welcome to the YouTube Downloader Project! In this project, you will develop a Python application that allows users to download YouTube videos for offline viewing. Your mission is to create a Python script that takes a YouTube video URL as input and downloads the video to the user's local system. This project will provide a hands-on experience with the `pytube` library, user input handling, and feedback mechanisms such as a download progress bar.
 
-Users shoudl be able to run YouTube Downloader from the command line or used as a module in other Python scripts. Here are the basic steps to use the tool:
+Users should be able to run YouTube Downloader from the command line or used as a module in other Python scripts. Here are the basic steps to use the tool:
 
 ```sh
 python youtube_downloader.py <youtube-url> <video-quality> <output-directory>
+```
+You can also use argparse to parse the command line arguments. The following is an example of how to use argparse to parse the command line arguments:
+
+```sh
+python youtube_downloader.py --url <youtube-url> --quality <video-quality> --output <output-directory>
 ```
 
 And the video(s) will be downloaded to the specified output directory.
