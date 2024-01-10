@@ -45,3 +45,20 @@ You are encouraged to use the `pytube` library for this project, which is a Pyth
 To learn more about `pytube`, you can explore the official documentation and this [repo](https://github.com/pytube/pytube/tree/master). It will guide you through the process of using `pytube` and help you implement the required features for the project.
 
 Good luck with your project, and enjoy the process of creating your own YouTube Downloader!
+
+## How Do YouTube Downloaders Work? [Optional]
+YouTube downloaders work by extracting the video stream from YouTube and allowing you to save it to your device. While YouTube itself does not provide a download button for all videos (except for some that can be downloaded within the YouTube mobile app for offline viewing), third-party tools are able to bypass this by using various methods. Here's a simplified explanation of how they generally work:
+
+- Retrieving Video Information: When you input a YouTube video URL into a downloader, the tool sends a request to YouTube servers pretending to be a client requesting video playback. It retrieves the page data that contains information about the video stream.
+
+- Extracting the Stream URL: YouTube streams video using adaptive bitrate streaming techniques like MPEG-DASH or HLS (HTTP Live Streaming). The downloader parses the information to find the direct URLs to the video and audio streams, which are typically segmented into small chunks to adapt to different bandwidths and devices.
+
+- Combining Video and Audio: In some cases, video and audio are streamed separately to optimize for various network conditions. The downloader might need to download both streams and combine them into a single file. This is often done with the help of additional software like FFmpeg.
+
+- Initiating the Download: Once the downloader has the correct stream URLs, it can begin downloading the video and audio chunks. Even if the video is streamed in small pieces, the downloader will piece together these segments to form a complete video file.
+
+- Conversion (if necessary): If the user wants the video in a different format than what YouTube provides, the downloader can convert the video into the desired format, like MP4, MP3, AVI, etc.
+
+- Saving to the Device: After the video is downloaded and possibly converted, the file is saved to the user's device where it can be played back without needing an internet connection.
+
+It's important to note that using third-party tools to download YouTube videos may violate YouTube's terms of service, which could result in the downloader tool being blocked or legal action against the service provider. Additionally, downloading copyrighted content without permission is illegal in many jurisdictions, and could result in legal consequences for the user as well.

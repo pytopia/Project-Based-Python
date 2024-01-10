@@ -2,6 +2,9 @@ import argparse
 
 from pytube import YouTube
 from tqdm import tqdm
+# import pytube exceptions
+from pytube.exceptions import VideoUnavailable
+
 
 
 class YouTubeDownloader:
@@ -25,7 +28,7 @@ class YouTubeDownloader:
                 return
 
             # Initialize tqdm progress bar
-            self.pbar = tqdm(total=video_stream.filesize, unit='B', unit_scale=True, desc=self.yt.title, ascii=True)
+            self.pbar = tqdm(total=video_stream.filesize, unit='B', unit_scale=True, desc=self.yt.title)
 
             # Download the video
             video_stream.download(self.output_path)
