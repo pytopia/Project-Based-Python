@@ -3,7 +3,7 @@ import streamlit as st
 from currency_converter import convert_currency, get_exchange_rate
 
 # Streamlit app
-st.markdown("# 💱 Currency Converter")
+st.markdown("# :dollar: Currency Converter")
 
 st.markdown("""
 This tool allows you to instantly convert amounts between different currencies 🌍.
