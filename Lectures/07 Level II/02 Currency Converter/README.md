@@ -7,10 +7,12 @@ The Currency Converter Project is designed to be a practical application leverag
 A solution within this project is expected to deliver the following outcomes:
 
 - **Currency Exchange Rate Retrieval**: Users should be able to input two currencies (e.g., USD and EUR) and retrieve the current exchange rate between them using the ExchangeRate-API.
-
 - **Currency Conversion**: Given an amount in one currency, users should be able to convert it to the equivalent amount in another currency. The program will apply the latest exchange rates to perform this calculation.
-
 - **Graphical User Interface (GUI)**: A Streamlit-based GUI that allows users to perform the above operations through a web interface. The GUI should be intuitive and user-friendly, enabling users with no technical background to use the application with ease.
+
+In this project you will learn how to use Python to interact with REST APIs, parse JSON data, and perform currency conversion calculations. Learning how to use REST APIs is a valuable skill that can be applied to a wide range of projects.
+
+<img src="./images/api-flow-white.png" width="800">
 
 ## Requirements
 To run this project, you will need the following:

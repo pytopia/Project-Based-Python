@@ -1,4 +1,7 @@
+import datetime
+
 import currencies
+import humanize
 import streamlit as st
 from currency_converter import convert_currency, get_exchange_rate
 
@@ -25,10 +28,14 @@ amount = st.number_input('Amount to Convert:', min_value=0.0, value=1.0)
 
 # Perform conversion without a button for instant execution
 if amount > 0 and base_currency and target_currency:
-    exchange_rate = get_exchange_rate(base_currency, target_currency)
+    exchange_rate, time_last_updated = get_exchange_rate(base_currency, target_currency)
+    time_diff = datetime.datetime.now() - datetime.datetime.fromtimestamp(time_last_updated)
+    # Use humanize to format the time difference
+    time_ago = humanize.naturaltime(time_diff)
+
     if exchange_rate:
         converted_amount = convert_currency(amount, exchange_rate)
-        st.success(f"✅ Exchange Rate: {exchange_rate:.4f}")
+        st.success(f"✅ Exchange Rate: {exchange_rate:.4f} (Last updated: {time_ago})")
         col1, col2, col3 = st.columns(3)
         col1.metric(label="Base Currency", value=f"{amount} {base_currency}")
         # right arrow
