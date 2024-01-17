@@ -1,9 +1,14 @@
 import requests
-from functools import cache
+# Run pip install cachetools for this to work
+from cachetools import cached, TTLCache
+
+
+# Define the cache with a max size of 100 items and a TTL of 5 minutes (300 seconds)
+cache = TTLCache(maxsize=100, ttl=300)
 
 
 # Function to get the exchange rate
-@cache
+@cached(cache)
 def get_exchange_rate(base_currency, target_currency):
     url = f"https://api.exchangerate-api.com/v4/latest/{base_currency}"
     response = requests.get(url)

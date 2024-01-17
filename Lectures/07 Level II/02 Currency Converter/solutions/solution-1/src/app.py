@@ -1,4 +1,5 @@
 import datetime
+import os
 
 import currencies
 import humanize
@@ -15,9 +16,6 @@ Enter the amount and choose the currencies to see the result.
 
 # Get the list of currencies from the currencies library
 currency_codes = list(currencies.MONEY_FORMATS.keys())
-
-# Ensure the API key is stored in a secure manner
-api_key = "your_api_key_here"  # Replace with your actual API key
 
 # Select boxes for choosing currencies
 base_currency = st.selectbox('From Currency (Base):', currency_codes, index=currency_codes.index("USD"))
