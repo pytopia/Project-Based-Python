@@ -1,52 +1,56 @@
-# Source Code Link:
-# https://hackr.io/blog/python-projects
-
-import pandas as pd
-from datetime import datetime
 import smtplib
-from email.message import EmailMessage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import random
+import csv
+
+# Your email credentials
+sender_email = "hejazizo.ali@gmail.com"
+sender_password = "fwsi ewkn dsqy rdft"
+
+# Path to your CSV file
+csv_file_path = "recipients.csv"
+
+# List of inspirational quotes
+quotes = [
+    "The best way to predict the future is to invent it. – Alan Kay",
+    "A dream doesn't become reality through magic; it takes sweat, determination, and hard work. – Colin Powell",
+    "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. – Albert Schweitzer",
+    # Add more quotes as needed
+]
 
 
-def send_email(recipient, subject, msg):
-    GMAIL_ID = 'your_email_here'
-    GMAIL_PWD = 'your_app_password_here'
+# Function to send emails
+def send_email(recipient_name, recipient_email, quote):
+    subject = "Your Daily Inspirational Quote"
+    body = f"Hello {recipient_name}, here is your daily inspirational quote:\n\n{quote}"
 
-    email = EmailMessage()
-    email['Subject'] = subject
-    email['From'] = GMAIL_ID
-    email['To'] = recipient
-    email.set_content(msg)
+    # Setting up the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_email
+    message['To'] = recipient_email
+    message['Subject'] = subject
+    message.attach(MIMEText(body, 'plain'))
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as gmail_obj:
-        gmail_obj.ehlo()
-        gmail_obj.login(GMAIL_ID, GMAIL_PWD)
-        gmail_obj.send_message(email)
-
-    print('Email sent to ' + str(recipient) + ' with Subject: \''
-            + str(subject) + '\' and Message: \'' + str(msg) + '\'')
-
-
-def send_bday_emails(bday_file):
-
-    bdays_df = pd.read_excel(bday_file)
-    today = datetime.now().strftime('%m-%d')
-    year_now = datetime.now().strftime('%Y')
-    sent_index = []
-
-    for idx, item in bdays_df.iterrows():
-        bday = item['Birthday'].to_pydatetime().strftime('%m-%d')
-        if (today == bday) and year_now not in str(item['Last Sent']):
-            msg = 'Happy Birthday ' + str(item['Name'] + '!!')
-            send_email(item['Email'], 'Happy Birthday', msg)
-            sent_index.append(idx)
-
-    
-    # add current year to Last Sent column in excel
-    for idx in sent_index:
-        bdays_df.loc[idx, 'Last Sent'] = str(year_now)
-
-    bdays_df.to_excel(bday_file, index=False)
+    # Sending the email
+    try:
+        session = smtplib.SMTP('smtp.gmail.com', 587)  # use gmail with port
+        session.starttls()  # enable security
+        session.login(sender_email, sender_password)  # login with mail_id and password
+        text = message.as_string()
+        session.sendmail(sender_email, recipient_email, text)
+        session.quit()
+        print(f"Mail Sent Successfully to {recipient_name} ({recipient_email})")
+    except Exception as e:
+        print(f"Failed to send email to {recipient_name} ({recipient_email}). Error: {e}")
 
 
-if __name__ == '__main__':
-    send_bday_emails(bday_file='data/birthday.xlsx')
+# Read CSV and send emails
+with open(csv_file_path, mode='r', encoding='utf-8') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        recipient_name = row['name']
+        recipient_email = row['email']
+        # Select a random quote
+        quote_of_the_day = random.choice(quotes)
+        send_email(recipient_name, recipient_email, quote_of_the_day)
