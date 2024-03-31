@@ -1,4 +1,4 @@
-from constants import UNDER_20, ABOVE_100, TENS
+from constants import ABOVE_100, TENS, UNDER_20
 
 
 def num_to_word(num: int) -> str:
