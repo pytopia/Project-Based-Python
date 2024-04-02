@@ -8,7 +8,6 @@ def num_to_word(num: int) -> str:
     :param int num: The number to be converted to words.
     :return: The word representation of the number.
     :rtype: str
-
     """
     # If the number is less than 20, use direct mapping.
     if num < 20:
@@ -26,8 +25,7 @@ def num_to_word(num: int) -> str:
     if num % pivot == 0:
         return f'{p1} {p2}'
 
-    p3 = num_to_word(num % pivot)
-    return f'{p1} {p2} {p3}'
+    return f'{p1} {p2} {num_to_word(num % pivot)}'
 
 
 if __name__ == "__main__":

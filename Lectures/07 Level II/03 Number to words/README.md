@@ -63,3 +63,15 @@ The program will then ask you to enter a number to convert into words. You can e
 - Gain hands-on experience with Python's built-in data types like dictionaries.
 - Learn to work with user input in Python.
 - Understand exception handling.
+
+## Future Enhancements
+
+Here are some ideas for enhancing the program:
+- Implement support for negative numbers.
+- Add support for decimal numbers.
+- Create a web interface for the number-to-word converter.
+- Implement a feature to convert words back to numbers.
+- Add support for larger numbers beyond 12 digits.
+- Implement a feature to convert numbers into words in different languages.
+
+You can look into this python package: [num2words](https://github.com/savoirfairelinux/num2words) for more advanced number-to-word conversion capabilities.
