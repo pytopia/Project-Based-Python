@@ -21,7 +21,9 @@ if st.button("Check"):
             context = prepare_context(links)
 
             prompt = f"""
-            I give you an information body from news and given a prompt you should detect if the prompt is a fake news or not briefly. I want to make decision accordingly. Just tell me if it's fake or not. Do not add anything else. Here is the prompt:
+            I give you an information body from news and given a prompt you should detect if the prompt is a fake news or not briefly.
+            I want to make decision accordingly.
+            Here is the prompt:
             Prompt:
             {query}
             Information body:
