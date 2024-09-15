@@ -1,0 +1,4 @@
+streamlit==1.38.0
+openai==1.13.4
+PyPDF2==3.0.1
+PyYAML==6.0.2
