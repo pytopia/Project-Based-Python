@@ -1,117 +1,80 @@
 import streamlit as st
-from PyPDF2 import PdfReader
-from llm_interface import call_llm
-from prompts import RESUME_YAML_SCHEMA, LLM_YAML_PARSE_PROMPT, RESUME_REVIEW_PROMPT, JOB_DESCRIPTION_REVIEW_PROMPT, REVIEW_OUTPUT_SCHEMA
 import yaml
+from src.utils.pdf import extract_text_from_pdf
+from src.utils.llm import parse_resume, review_resume
+from resume_formatter import format_resume
 
-import re
+def main():
+    st.title(":page_facing_up: Resume Parser and Reviewer")
+    st.sidebar.image("src/images/banner.png")
+    st.sidebar.markdown("""
+        :brain: ResumeAI is an advanced tool that leverages the power of Large Language Models (LLMs) to analyze and improve resumes.
+    """)
 
-from yaml.loader import SafeLoader
+    with st.sidebar:
+        uploaded_file = st.file_uploader("Upload your resume (PDF)", type="pdf")
+        job_description = st.text_area("Enter job description (optional)").strip()
 
-class CustomSafeLoader(SafeLoader):
-    def __init__(self, stream):
-        super(CustomSafeLoader, self).__init__(stream)
-        self.add_implicit_resolver(
-            u'tag:yaml.org,2002:str',
-            re.compile(u'^(?:(?!:).)*$', re.X),
-            list(u'-0123456789')
-        )
+        if st.button("Run Analysis", use_container_width=True):
+            if uploaded_file is not None:
+                resume_text = extract_text_from_pdf(uploaded_file)
+                with st.spinner("Parsing resume... [Step 1 of 2]"):
+                    resume_yaml = parse_resume(resume_text)
+                with st.spinner("Reviewing resume... [Step 2 of 2]"):
+                    review_response = review_resume(resume_yaml, job_description)
 
-def extract_yaml(content):
-    # Define the pattern to match YAML content
-    pattern = r'```yaml\s*(.*?)\s*```'
+                resume_data = yaml.safe_load(resume_yaml)
+                review_data = yaml.safe_load(review_response)
 
-    # Search for the pattern in the content
-    match = re.search(pattern, content, re.DOTALL)
+                st.session_state.resume_data = resume_data
+                st.session_state.review_data = review_data
+                st.session_state.current_section = 0
+                st.session_state.sections = list(resume_data.keys())
 
-    if match:
-        # If the pattern is found, return the content between the delimiters
-        return match.group(1).strip()
+    if 'resume_data' in st.session_state and 'review_data' in st.session_state:
+        display_analysis()
     else:
-        # If no delimiters are found, return the entire content
-        return content.strip()
+        st.info("Please upload a resume and run the analysis to view results.")
 
-
-def extract_text_from_pdf(pdf_file):
-    reader = PdfReader(pdf_file)
-    resume_text = ""
-    for page in reader.pages:
-        resume_text += page.extract_text()
-    return resume_text
-
-st.title("Resume Parser and Reviewer")
-
-# File uploader
-uploaded_file = st.file_uploader("Upload your resume (PDF)", type="pdf")
-
-# Job description input
-job_description = st.text_area("Enter job description (optional)")
-
-# Run button
-if st.button("Run Analysis", use_container_width=True):
-    if uploaded_file is not None:
-        # Extract text from PDF
-        resume_text = extract_text_from_pdf(uploaded_file)
-
-        # Parse resume
-        parse_prompt = LLM_YAML_PARSE_PROMPT.format(resume_schema=RESUME_YAML_SCHEMA, resume_text=resume_text)
-        resume_yaml = call_llm(parse_prompt)
-        resume_yaml = extract_yaml(resume_yaml)
-        # Review resume
-        review_prompt = RESUME_REVIEW_PROMPT.format(resume_data=resume_yaml, review_output_schema=REVIEW_OUTPUT_SCHEMA)
-        review_response = call_llm(review_prompt)
-        review_response = extract_yaml(review_response)
-
-        # Job description review (if provided)
-        if job_description:
-            job_review_prompt = JOB_DESCRIPTION_REVIEW_PROMPT.format(resume_data=resume_yaml, job_description=job_description, review_output_schema=REVIEW_OUTPUT_SCHEMA)
-            job_review_response = call_llm(job_review_prompt)
-        else:
-            job_review_response = None
-
-        # Parse YAML data
-        resume_data = yaml.load(resume_yaml, Loader=CustomSafeLoader)
-        review_data = yaml.load(review_response, Loader=CustomSafeLoader)
-
-        # Store data in session state
-        st.session_state.resume_data = resume_data
-        st.session_state.review_data = review_data
-        st.session_state.current_section = 0
-        st.session_state.sections = list(resume_data.keys())
-
-        # Display raw data in expanders
-        with st.expander("Raw Resume Data"):
-            st.code(resume_yaml)
-        with st.expander("Raw Review Data"):
-            st.code(review_response)
-        if job_review_response:
-            with st.expander("Raw Job Description Review"):
-                st.code(job_review_response)
-
-# Display parsed and reviewed data
-if 'resume_data' in st.session_state and 'review_data' in st.session_state:
-    st.header("Resume Analysis")
-
-    # Navigation buttons
-    col1, col2 = st.columns(2)
+def display_analysis():
+    col1, col2, col3 = st.columns([3, 1, 3])
     with col1:
-        if st.button("⬅️ Previous", use_container_width=True) and st.session_state.current_section > 0:
+        if st.button("⬅️", use_container_width=True) and st.session_state.current_section > 0:
             st.session_state.current_section -= 1
     with col2:
-        if st.button("➡️ Next", use_container_width=True) and st.session_state.current_section < len(st.session_state.sections) - 1:
+        page_number = f"{st.session_state.current_section + 1}/{len(st.session_state.sections)}"
+        st.button(f"**{page_number}**", use_container_width=True)
+    with col3:
+        if st.button("➡️", use_container_width=True) and st.session_state.current_section < len(st.session_state.sections) - 1:
             st.session_state.current_section += 1
 
     current_section = st.session_state.sections[st.session_state.current_section]
-    st.subheader(current_section.replace("_", " ").title())
 
-    # Display original and revised data
+    revision_suggestion_placeholder = st.empty()
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown("**Original**")
-        st.write(st.session_state.resume_data[current_section])
+        st.info(":x: **Original**")
+        current_section_data = st.session_state.resume_data[current_section]
+        st.info(format_resume({current_section: current_section_data}))
     with col2:
-        st.markdown("**Revised**")
-        st.write(st.session_state.review_data[current_section])
+        st.success(":white_check_mark: **Revised**")
+        current_section_data = st.session_state.review_data[current_section]
+        impact_level = current_section_data['impact_level']
+        revision_suggestion = current_section_data['revision_suggestion']
+        revised_content = current_section_data['revised_content']
+        st.success(format_resume({current_section: revised_content}))
 
-else:
-    st.info("Please upload a resume and run the analysis to view results.")
+    with revision_suggestion_placeholder.expander("Revision Suggestions", expanded=True):
+        if impact_level == "Low":
+            st.info(f"Impact Level: {impact_level}")
+        elif impact_level == "Medium":
+            st.warning(f"Impact Level: {impact_level}")
+        elif impact_level == "High":
+            st.error(f"Impact Level: {impact_level}")
+
+        for suggestion in revision_suggestion:
+            st.markdown(f"- {suggestion}")
+
+
+if __name__ == "__main__":
+    main()
