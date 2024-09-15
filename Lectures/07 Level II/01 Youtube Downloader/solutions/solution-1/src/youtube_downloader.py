@@ -1,6 +1,10 @@
 import argparse
 
-from pytube import YouTube
+## Because of a bug in pytube, we can use pytubefix instead
+# from pytube import YouTube
+# from pytube.exceptions import VideoUnavailable
+from pytubefix import YouTube
+from pytubefix.exceptions import VideoUnavailable
 from tqdm import tqdm
 
 
@@ -16,17 +20,29 @@ def download_video(url, quality, output_path):
         yt = YouTube(url)
 
         # If user wants the highest resolution, use 'get_highest_resolution' filter
-        if quality == 'highest':
-            video_stream = yt.streams.filter(progressive=True, file_extension='mp4').get_highest_resolution()
+        if quality == "highest":
+            video_stream = yt.streams.filter(
+                progressive=True, file_extension="mp4"
+            ).get_highest_resolution()
         else:
-            video_stream = yt.streams.filter(progressive=True, res=quality, file_extension='mp4').first()
+            video_stream = yt.streams.filter(
+                progressive=True, res=quality, file_extension="mp4"
+            ).first()
 
         if video_stream is None:
+            available_qualities = [
+                str(stream.resolution)
+                for stream in yt.streams.filter(progressive=True, file_extension="mp4")
+            ]
             print(f"No streams found with the specified quality: {quality}")
+            print(f"Title: {yt.title}")
+            print(f"Available qualities: {available_qualities}")
             return
 
         # Initialize tqdm progress bar
-        pbar = tqdm(total=video_stream.filesize, unit='B', unit_scale=True, desc=yt.title)
+        pbar = tqdm(
+            total=video_stream.filesize, unit="B", unit_scale=True, desc=yt.title
+        )
 
         def on_progress(stream, chunk, bytes_remaining):
             """
@@ -48,23 +64,32 @@ def download_video(url, quality, output_path):
         pbar.close()
         print(f"\nDownloaded '{yt.title}' successfully to: {output_path}")
 
-    except Exception as e:
+    except VideoUnavailable as e:
         print("An error occurred:", e)
         pbar.close()  # Ensure the progress bar is closed in case of error
         return
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Download a YouTube video at a specified quality and output path.')
-
-    parser.add_argument('url', help='The YouTube URL to download')
-    parser.add_argument(
-        '-q', '--quality',
-        help='The desired video quality (e.g., 720p, 1080p, highest)',
-        default='highest',
-        type=str
+    parser = argparse.ArgumentParser(
+        description="Download a YouTube video at a specified quality and output path."
     )
-    parser.add_argument('-o', '--output_path', help='The output directory to save the video', default='.', type=str)
+
+    parser.add_argument("url", help="The YouTube URL to download")
+    parser.add_argument(
+        "-q",
+        "--quality",
+        help="The desired video quality (e.g., 720p, 1080p, highest)",
+        default="highest",
+        type=str,
+    )
+    parser.add_argument(
+        "-o",
+        "--output_path",
+        help="The output directory to save the video",
+        default=".",
+        type=str,
+    )
 
     args = parser.parse_args()
 

@@ -1,16 +1,19 @@
 import argparse
 from pathlib import Path
 
-from pytube import YouTube
+## Because of a bug in pytube, we can use pytubefix instead
+# from pytube import YouTube
+# from pytube.exceptions import VideoUnavailable
+from pytubefix import YouTube
+from pytubefix.exceptions import VideoUnavailable
 from tqdm import tqdm
-from pytube.exceptions import VideoUnavailable
 
 
 class YouTubeDownloader:
     def __init__(self, url, output_path=None, quality=None):
         self.url = url
         self.output_path = output_path or Path.cwd()
-        self.quality = quality or 'highest'
+        self.quality = quality or "highest"
         self.yt = YouTube(
             self.url,
             on_progress_callback=self.on_progress,
@@ -21,24 +24,22 @@ class YouTubeDownloader:
         try:
             self.yt.check_availability()
         except VideoUnavailable:
-            print('Video is unavailable')
+            print("Video is unavailable")
             return
 
-        if self.quality == 'highest':
+        if self.quality == "highest":
             stream = self.yt.streams.filter(
-                progressive=True, file_extension='mp4'
+                progressive=True, file_extension="mp4"
             ).get_highest_resolution()
         else:
             stream = self.yt.streams.filter(
-                progressive=True,
-                file_extension='mp4',
-                res=self.quality
+                progressive=True, file_extension="mp4", res=self.quality
             ).first()
 
         self.pbar = tqdm(
-            desc='Downloading ...',
+            desc="Downloading ...",
             total=stream.filesize,
-            unit='B',
+            unit="B",
             unit_scale=True,
         )
 
@@ -52,13 +53,11 @@ class YouTubeDownloader:
         pass
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description='YouTube Downloader'
-    )
-    parser.add_argument('url', help='YouTube video URL')
-    parser.add_argument('-q', '--quality', help='Video quality', default='highest')
-    parser.add_argument('-o', '--output_path', help='Output path', default=None)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="YouTube Downloader")
+    parser.add_argument("url", help="YouTube video URL")
+    parser.add_argument("-q", "--quality", help="Video quality", default="highest")
+    parser.add_argument("-o", "--output_path", help="Output path", default=None)
 
     args = parser.parse_args()
 
