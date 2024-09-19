@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  telegram-bot:
+    build: .
+    env_file: .env
+    volumes:
+      - ./src:/app/src
+      - ./bot.log:/app/bot.log

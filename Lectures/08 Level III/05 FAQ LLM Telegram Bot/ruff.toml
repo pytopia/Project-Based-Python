@@ -1,0 +1,48 @@
+lint.select = [
+  "E", "F", "W", "C", "I", "N", "S", "B", "G", "Q", "UP", "C4", "DJ", "PT", "PL",
+  "PD", "PGH", "RET", "RSE", "TRY", "T20", "PYI", "PIE", "ERA", "AIR", "LOG", "RUF",
+  "NPY", "FLY", "INP", "TCH", "ICN", "INT", "PTH", "PLR", "TID", "EXE", "ISC", "COM", "YTT",
+  "DTZ", "SIM", "FURB", "PERF", "SLOT", "ASYNC", "D201", "D204", "D207", "D208", "D209",
+  "D211", "D212"
+]
+lint.ignore = [
+  "RUF012", "S101", "TRY003", "PLR0913", "PLR0917", "DJ001", "PLR6301", "PLR6301", "RET503",
+  "S308", "ERA001"
+]
+
+lint.fixable = ["ALL"]
+lint.unfixable = []
+
+exclude = [
+    ".git",
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    ".ebextensions",
+    ".idea",
+    "logs",
+    "media",
+    "postgres_data",
+    "redis_data",
+    "static",
+    "staticfiles",
+]
+
+line-length = 120
+indent-width = 4
+
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py312"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[lint.mccabe]
+max-complexity = 10

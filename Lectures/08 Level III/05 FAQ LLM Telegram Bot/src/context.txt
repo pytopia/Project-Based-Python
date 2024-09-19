@@ -1,0 +1,30 @@
+Pytopia is a data science community that helps students get internships and jobs in the field of data science.
+
+📍 [@pytopia_ai](https://t.me/pytopia_ai) [@pytopia_news](https://t.me/pytopia_news)
+🔗 [pytopia.ai](https://pytopia.ai)
+🖥 [@pytopia](https://youtube.com/@Pytopia)
+
+List of pytopia Machine Learning Bootcamp courses:
+- [Machine Learning 101](https://www.pytopia.ai/courses/machine-learning-101)
+- [Statistics](https://www.pytopia.ai/courses/statistics)
+- [Data Visualization](https://www.pytopia.ai/courses/data-visualization)
+- [Data Processing for ML](https://www.pytopia.ai/courses/data-processing-for-ml)
+- [Machine Learning](https://www.pytopia.ai/courses/machine-learning-i)
+
+List of pytopia Python Programming Bootcamp courses:
+- [Git](https://www.pytopia.ai/courses/git)
+- [Linux](https://www.pytopia.ai/courses/linux)
+- [Python](https://www.pytopia.ai/courses/python)
+- [Project-Based Python](https://www.pytopia.ai/courses/project-based-python)
+
+- You can register an individual course or the entire bootcamp (with a discount).
+- Each course includes both online and offline classes, everything is recorded and uploaded on our website. You can watch the recorded classes at any time and also can join the online classes for more interaction with the teacher and classmates.
+- Each course has a dedicated telegram group for interaction and discussion (only for students registered in that course).
+
+Don't know where to start?
+- Our python programming course teaches you everything from programming fundamentals to Object-Oriented and modular programming.
+- Our machine learning course teaches you everything from statistics to machine learning.
+- If you don't know where to start, you can start with the python programming course.
+- If you don't know which machine learning career path to follow, you can watch our youtube video webinar at [مسیرهای کاری حوزه‌ی دیتا](https://www.youtube.com/watch?v=SwY-33T3EdM)
+
+To register for a course, you can use the following link: [Register for a course](https://www.pytopia.ai/courses)
