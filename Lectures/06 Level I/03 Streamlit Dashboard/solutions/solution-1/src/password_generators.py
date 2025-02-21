@@ -26,12 +26,11 @@ class RandomPasswordGenerator(PasswordGenerator):
     """
     def __init__(self, length: int = 8, include_numbers: bool = False, include_symbols: bool = False):
         self.length = length
+        self.characters: str = string.ascii_letters
         if include_numbers:
-            self.characters: str = string.ascii_letters + string.digits
-        elif include_symbols:
-            self.characters: str = string.ascii_letters + string.punctuation
-        else:
-            self.characters: str = string.ascii_letters
+            self.characters += string.digits
+        if include_symbols:
+            self.characters += string.punctuation
 
     def generate(self) -> str:
         """
