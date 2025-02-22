@@ -1,5 +1,4 @@
 import random
-from typing import List
 
 
 def monty_hall_game(switch_doors: bool) -> bool:
@@ -51,5 +50,5 @@ def simulate_games(num_games: int = 1000) -> None:
 if __name__ == "__main__":
     num_games = 1000
     num_wins_without_switching, num_wins_with_switching = simulate_games(num_games)
-    print(f"Winning percentage without switching doors: {num_wins_without_switching/num_games*100}%")
-    print(f"Winning percentage with switching doors: {num_wins_with_switching/num_games*100}%")
+    print(f"Winning percentage without switching doors: {(num_wins_without_switching/num_games):.2%}")
+    print(f"Winning percentage with    switching doors: {(num_wins_with_switching/num_games):.2%}")
