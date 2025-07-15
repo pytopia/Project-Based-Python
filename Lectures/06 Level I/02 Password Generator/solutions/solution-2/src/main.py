@@ -7,12 +7,11 @@ def generate_random_password(length: int = 8, include_numbers: bool = False, inc
     """
     Generate a random password.
     """
+    characters: str = string.ascii_letters
     if include_numbers:
-        characters = string.ascii_letters + string.digits
-    elif include_symbols:
-        characters = string.ascii_letters + string.punctuation
-    else:
-        characters = string.ascii_letters
+        characters += string.digits
+    if include_symbols:
+        characters += string.punctuation
 
     return ''.join(random.choice(characters) for _ in range(length))
 
