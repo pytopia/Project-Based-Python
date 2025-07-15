@@ -29,7 +29,7 @@ def configure_logger(verbose):
     log_level = "DEBUG" if verbose else "INFO"
     logger.remove()  # Remove the default handler
     logger.add(sys.stderr, level=log_level)
-    logger.add("bot.log", rotation="100 MB", level="DEBUG")
+    logger.add("logs/bot.log", rotation="100 MB", level="DEBUG")
     logger.info(f"Log level set to {log_level} for console and DEBUG for file")
 
 

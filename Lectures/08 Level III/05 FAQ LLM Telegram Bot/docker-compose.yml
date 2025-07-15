@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-  telegram-bot:
+  my-telegram-bot:
     build: .
+    container_name: my-telegram-bot
     env_file: .env
     volumes:
       - ./src:/app/src
-      - ./bot.log:/app/bot.log
+      - ./logs:/app/logs
+    restart: always
