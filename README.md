@@ -96,6 +96,6 @@ Feel free to reach out to us!
 - 💬 Telegram: [pytopia_ai](https://t.me/pytopia_ai)
 - 🎥 YouTube: [pytopia](https://www.youtube.com/c/pytopia)
 - 📸 Instagram: [pytopia.ai](https://www.instagram.com/pytopia.ai)
-- 🎓 LinkedIn: [pytopia](https://www.linkedin.com/in/pytopia)
+- 🎓 LinkedIn: [pytopia](https://www.linkedin.com/company/pytopia/)
 - 🐦 Twitter: [pytopia_ai](https://twitter.com/pytopia_ai)
 - 📧 Email: [pytopia.ai@gmail.com](mailto:pytopia.ai@gmail.com)
