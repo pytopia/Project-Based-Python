@@ -14,6 +14,7 @@ This implementation solves the famous Monty Hall problem, presenting an interact
    ├─ monty_hall.py
    └─ app.py
 ```
+
 - `README.md`: This descriptive file
 - `requirements.txt`: Contains all the required modules and libraries needed to run the project
 - `src/monty_hall.py`: Contains the Python program to simulate the Monty Hall game
@@ -23,6 +24,7 @@ This implementation solves the famous Monty Hall problem, presenting an interact
 
 - Python 3.7 or higher
 - Streamlit
+- pandas
 
 To install necessary packages, run `pip install -r requirements.txt`.
 
@@ -32,7 +34,7 @@ You can play the Monty Hall game simulation by adding the `src` directory to the
 
 `python3 src/monty_hall.py`
 
-To start the Streamlit dashboard, run: 
+To start the Streamlit dashboard, run:
 
 `streamlit run src/app.py`
 
